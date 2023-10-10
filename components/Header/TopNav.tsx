@@ -55,13 +55,14 @@ const TopNav = () => {
             </a>
           </li>
           <li>
-            <a href="#">{t("about_us")}</a>
+            {/* <a href="#">{t("about_us")}</a> */}
+            <a href="#">about us</a>
           </li>
           <li>
-            <a href="#">{t("our_policy")}</a>
+            <a href="#">our policy</a>
           </li>
         </ul>
-        <ul className={`flex ${styles.topRightMenu}`}>
+        {/* <ul className={`flex ${styles.topRightMenu}`}>
           <li>
             <Menu as="div" className="relative">
               <Menu.Button as="a" href="#" className="flex">
@@ -128,7 +129,7 @@ const TopNav = () => {
               </Menu.Items>
             </Menu>
           </li>
-        </ul>
+        </ul> */}
       </div>
     </div>
   );

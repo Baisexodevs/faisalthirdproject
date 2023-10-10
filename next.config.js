@@ -1,6 +1,8 @@
-const withPWA = require("next-pwa");
+const withPWA = require('next-pwa')({
+  dest: 'public'
+})
 
-module.exports = withPWA({
+const nextConfig = {
   // module.exports = {
   i18n: {
     locales: ["en", "my"],
@@ -14,10 +16,12 @@ module.exports = withPWA({
   images: {
     domains: ["robohash.org", "res.cloudinary.com"],
   },
-  pwa: {
-    dest: "public",
-    skipWaiting: true,
-    disable: process.env.NODE_ENV === "development",
-  },
+  // pwa: {
+  //   dest: "public",
+  //   skipWaiting: true,
+  //   disable: process.env.NODE_ENV === "development",
+  // },
   // };
-});
+};
+
+module.exports = withPWA(nextConfig);

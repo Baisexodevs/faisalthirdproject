@@ -96,22 +96,26 @@ const Header: React.FC<Props> = ({ title }) => {
             <ul className={`flex-0 lg:flex-1 flex ${styles.leftMenu}`}>
               <li>
                 <Link href={`/product-category/men`}>
-                  <a>{t("men")}</a>
+                  {/* <a>{t("men")}</a> */}
+                  <a>Plants Category1</a>
                 </Link>
               </li>
               <li>
                 <Link href={`/product-category/women`}>
-                  <a>{t("women")}</a>
+                  {/* <a>{t("women")}</a> */}
+                  <a>Plants cat2</a>
                 </Link>
               </li>
               <li>
                 <Link href="/product-category/bags">
-                  <a>{t("bags")}</a>
+                  {/* <a>{t("bags")}</a> */}
+                  <a>Plants cat3</a>
                 </Link>
               </li>
               <li>
                 <Link href="/coming-soon">
-                  <a>{t("blogs")}</a>
+                  {/* <a>{t("blogs")}</a> */}
+                  <a>Plants cat4</a>
                 </Link>
               </li>
             </ul>

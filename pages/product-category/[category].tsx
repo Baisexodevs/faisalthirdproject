@@ -40,6 +40,72 @@ const ProductCategory: React.FC<Props> = ({
   const firstIndex = page === 1 ? page : page * 10 - 9;
   const lastIndex = page * 10;
 
+  const plantsDataArr = [
+    {
+      id: 1,
+      name: "Plant 1",
+      price: 300,
+      img1: "/plants/plant1.jpg",
+      img2: "/plants/plant1.jpg",
+    },
+    {
+      id: 2,
+      name: "Plant 2",
+      price: 300,
+      img1: "/plants/plant2.jpg",
+      img2: "/plants/plant2.jpg",
+    },
+    {
+      id: 3,
+      name: "Plant 3",
+      price: 300,
+      img1: "/plants/plant3.jpg",
+      img2: "/plants/plant3.jpg",
+    },
+    {
+      id: 4,
+      name: "Plant 4",
+      price: 300,
+      img1: "/plants/plant4.jpg",
+      img2: "/plants/plant4.jpg",
+    },
+    {
+      id: 5,
+      name: "Plant 5",
+      price: 300,
+      img1: "/plants/plant5.jpg",
+      img2: "/plants/plant5.jpg",
+    },
+    {
+      id: 6,
+      name: "Plant 6",
+      price: 300,
+      img1: "/plants/plant5.jpg",
+      img2: "/plants/plant5.jpg",
+    },
+    {
+      id: 7,
+      name: "Plant 5",
+      price: 300,
+      img1: "/plants/plant5.jpg",
+      img2: "/plants/plant5.jpg",
+    },
+    {
+      id: 8,
+      name: "Plant 5",
+      price: 300,
+      img1: "/plants/plant5.jpg",
+      img2: "/plants/plant5.jpg",
+    },
+    {
+      id: 9,
+      name: "Plant 5",
+      price: 300,
+      img1: "/plants/plant5.jpg",
+      img2: "/plants/plant5.jpg",
+    },
+  ];
+
   return (
     <div>
       {/* ===== Head Section ===== */}
@@ -76,7 +142,7 @@ const ProductCategory: React.FC<Props> = ({
         {/* ===== Main Content Section ===== */}
         <div className="app-x-padding app-max-width mt-3 mb-14">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-4 gap-y-10 sm:gap-y-6 mb-10">
-            {items.map((item) => (
+            {plantsDataArr.map((item) => (
               <Card key={item.id} item={item} />
             ))}
           </div>
@@ -96,64 +162,64 @@ const ProductCategory: React.FC<Props> = ({
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async ({
-  params,
-  locale,
-  query: { page = 1, orderby = "latest" },
-}) => {
-  const paramCategory = params!.category as string;
+// export const getServerSideProps: GetServerSideProps = async ({
+//   params,
+//   locale,
+//   query: { page = 1, orderby = "latest" },
+// }) => {
+//   const paramCategory = params!.category as string;
 
-  const start = +page === 1 ? 0 : (+page - 1) * 10;
+//   const start = +page === 1 ? 0 : (+page - 1) * 10;
 
-  let numberOfProducts = 0;
+//   let numberOfProducts = 0;
 
-  if (paramCategory !== "new-arrivals") {
-    const numberOfProductsResponse = await axios.get(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/products/count?category=${paramCategory}`
-    );
-    numberOfProducts = +numberOfProductsResponse.data.count;
-  } else {
-    numberOfProducts = 10;
-  }
+//   if (paramCategory !== "new-arrivals") {
+//     const numberOfProductsResponse = await axios.get(
+//       `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/products/count?category=${paramCategory}`
+//     );
+//     numberOfProducts = +numberOfProductsResponse.data.count;
+//   } else {
+//     numberOfProducts = 10;
+//   }
 
-  let order_by: string;
+//   let order_by: string;
 
-  if (orderby === "price") {
-    order_by = "price";
-  } else if (orderby === "price-desc") {
-    order_by = "price.desc";
-  } else {
-    order_by = "createdAt.desc";
-  }
+//   if (orderby === "price") {
+//     order_by = "price";
+//   } else if (orderby === "price-desc") {
+//     order_by = "price.desc";
+//   } else {
+//     order_by = "createdAt.desc";
+//   }
 
-  const reqUrl =
-    paramCategory === "new-arrivals"
-      ? `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/products?order_by=createdAt.desc&limit=10`
-      : `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/products?order_by=${order_by}&offset=${start}&limit=10&category=${paramCategory}`;
+//   const reqUrl =
+//     paramCategory === "new-arrivals"
+//       ? `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/products?order_by=createdAt.desc&limit=10`
+//       : `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/products?order_by=${order_by}&offset=${start}&limit=10&category=${paramCategory}`;
 
-  const res = await axios.get(reqUrl);
+//   const res = await axios.get(reqUrl);
 
-  const fetchedProducts = res.data.data.map((product: apiProductsType) => ({
-    ...product,
-    img1: product.image1,
-    img2: product.image2,
-  }));
+//   const fetchedProducts = res.data.data.map((product: apiProductsType) => ({
+//     ...product,
+//     img1: product.image1,
+//     img2: product.image2,
+//   }));
 
-  let items: apiProductsType[] = [];
-  fetchedProducts.forEach((product: apiProductsType) => {
-    items.push(product);
-  });
+//   let items: apiProductsType[] = [];
+//   fetchedProducts.forEach((product: apiProductsType) => {
+//     items.push(product);
+//   });
 
-  return {
-    props: {
-      messages: (await import(`../../messages/common/${locale}.json`)).default,
-      items,
-      numberOfProducts,
-      page: +page,
-      orderby,
-    },
-  };
-};
+//   return {
+//     props: {
+//       messages: (await import(`../../messages/common/${locale}.json`)).default,
+//       items,
+//       numberOfProducts,
+//       page: +page,
+//       orderby,
+//     },
+//   };
+// };
 
 const SortMenu: React.FC<{ orderby: OrderType }> = ({ orderby }) => {
   const t = useTranslations("Navigation");
