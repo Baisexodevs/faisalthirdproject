@@ -15,14 +15,14 @@ import { apiProductsType, itemType } from "../context/cart/cart-types";
 import LinkButton from "../components/Buttons/LinkButton";
 
 // /bg-img/ourshop.png
-import ourShop from "../public/bg-img/ourshop.png";
+import ourShop from "../public/bg-img/ourshop.jpg";
 
 type Props = {
   products: itemType[];
 };
 
 // const Home: React.FC<Props> = ({ products }) => {
-  const Home: React.FC<Props> = () => {
+const Home: React.FC<Props> = () => {
   const t = useTranslations("Index");
   const [currentItems, setCurrentItems] = useState([]);
   const [isFetching, setIsFetching] = useState(false);
@@ -103,7 +103,7 @@ type Props = {
           <div className="app-max-width app-x-padding h-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <div className="w-full sm:col-span-2 lg:col-span-2">
               <OverlayContainer
-                imgSrc="/bg-img/banner_minipage1.jpg"
+                imgSrc="/bg-img/outdoor-minipage.jpg"
                 imgSrc2="/bg-img/banner_minipage1-tablet.jpg"
                 imgAlt="New Arrivals"
               >
@@ -111,33 +111,36 @@ type Props = {
                   href="/product-category/new-arrivals"
                   extraClass="absolute bottom-10-per sm:right-10-per z-20"
                 >
-                  {t("new_arrivals")}
+                  {/* {t("new_arrivals")} */}
+                  Outdoor Plants
                 </LinkButton>
               </OverlayContainer>
             </div>
             <div className="w-full">
               <OverlayContainer
-                imgSrc="/bg-img/banner_minipage2.jpg"
+                imgSrc="/bg-img/indoor-minipage.jpg"
                 imgAlt="Women Collection"
               >
                 <LinkButton
                   href="/product-category/women"
                   extraClass="absolute bottom-10-per z-20"
                 >
-                  {t("women_collection")}
+                  {/* {t("women_collection")} */}
+                  Indoor Plants
                 </LinkButton>
               </OverlayContainer>
             </div>
             <div className="w-full">
               <OverlayContainer
-                imgSrc="/bg-img/banner_minipage3.jpg"
+                imgSrc="/bg-img/artificial-minipage.jpg"
                 imgAlt="Men Collection"
               >
                 <LinkButton
                   href="/product-category/men"
                   extraClass="absolute bottom-10-per z-20"
                 >
-                  {t("men_collection")}
+                  {/* {t("men_collection")} */}
+                  Artificial Plants
                 </LinkButton>
               </OverlayContainer>
             </div>
@@ -148,8 +151,10 @@ type Props = {
         <section className="app-max-width w-full h-full flex flex-col justify-center mt-16 mb-20">
           <div className="flex justify-center">
             <div className="w-3/4 sm:w-1/2 md:w-1/3 text-center mb-8">
-              <h2 className="text-3xl mb-4">{t("best_selling")}</h2>
-              <span>{t("best_selling_desc")}</span>
+              {/* <h2 className="text-3xl mb-4">{t("best_selling")}</h2> */}
+              <h2 className="text-3xl mb-4">Best Selling</h2>
+              {/* <span>{t("best_selling_desc")}</span> */}
+              <span>Best Selling</span>
             </div>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 lg:gap-x-12 gap-y-6 mb-10 app-x-padding">
@@ -162,14 +167,16 @@ type Props = {
 
         {/* ===== Testimonial Section ===== */}
         <section className="w-full hidden h-full py-16 md:flex flex-col items-center bg-lightgreen">
-          <h2 className="text-3xl">{t("testimonial")}</h2>
+          {/* <h2 className="text-3xl">{t("testimonial")}</h2> */}
+          <h2 className="text-3xl">Testimonial</h2>
           <TestiSlider />
         </section>
 
         {/* ===== Featured Products Section ===== */}
         <section className="app-max-width app-x-padding my-16 flex flex-col">
           <div className="text-center mb-6">
-            <h2 className="text-3xl">{t("featured_products")}</h2>
+            {/* <h2 className="text-3xl">{t("featured_products")}</h2> */}
+            <h2 className="text-3xl">Featured Products</h2>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-4 gap-y-10 sm:gap-y-6 mb-10">
             {plantsDataArr.map((item) => (
@@ -178,7 +185,8 @@ type Props = {
           </div>
           <div className="flex justify-center">
             <Button
-              value={!isFetching ? t("see_more") : t("loading")}
+              // value={!isFetching ? t("see_more") : t("loading")}
+              value={!isFetching ? 'see more' : 'loading'}
               // onClick={handleSeemore}
             />
           </div>
@@ -189,8 +197,10 @@ type Props = {
         {/* ===== Our Shop Section */}
         <section className="app-max-width mt-16 mb-20 flex flex-col justify-center items-center text-center">
           <div className="textBox w-3/4 md:w-2/4 lg:w-2/5 mb-6">
-            <h2 className="text-3xl mb-6">{t("our_shop")}</h2>
-            <span className="w-full">{t("our_shop_desc")}</span>
+            {/* <h2 className="text-3xl mb-6">{t("our_shop")}</h2> */}
+            <h2 className="text-3xl mb-6">Our Shop</h2>
+            {/* <span className="w-full">{t("our_shop_desc")}</span> */}
+            <span className="w-full">We the most varieties of plants from all over the world!</span>
           </div>
           <div className="w-full app-x-padding flex justify-center">
             <Image src={ourShop} alt="Our Shop" />

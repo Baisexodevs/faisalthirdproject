@@ -16,31 +16,31 @@ SwiperCore.use([Pagination, Navigation, Autoplay]);
 const sliders = [
   {
     id: 2,
-    image: "/bg-img/curly_hair_girl-1.jpg",
+    image: "/bg-img/outdoor.jpg",
     imageTablet: "/bg-img/curly_hair_girl-1-tablet.png",
     imageMobile: "/bg-img/curly_hair_girl-1_mobile.jpg",
     subtitle: "50% off",
-    titleUp: "New Cocktail",
+    titleUp: "OutDoor Plants",
     titleDown: "Dresses",
     rightText: false,
   },
   {
     id: 1,
-    image: "/bg-img/curly_hair_white-1.jpg",
+    image: "/bg-img/indoor.jpg",
     imageTablet: "/bg-img/curly_hair_white-1-tablet.png",
     imageMobile: "/bg-img/curly_hair_white-1_mobile.jpg",
     subtitle: "Spring Revolution",
-    titleUp: "Night Summer",
+    titleUp: "Indoor Plants",
     titleDown: "Dresses",
     rightText: true,
   },
   {
     id: 3,
-    image: "/bg-img/monigote.jpg",
+    image: "/bg-img/artificial.jpg",
     imageTablet: "/bg-img/monigote-tablet.png",
     imageMobile: "/bg-img/monigote_mobile.jpg",
     subtitle: "Spring promo",
-    titleUp: "The Weekend",
+    titleUp: "Artificial Plants",
     titleDown: "Promotions",
     rightText: false,
   },
@@ -106,14 +106,15 @@ const Slideshow = () => {
               >
                 <span className={styles.subtitle}>{slider.subtitle}</span>
                 <span
-                  className={`${styles.title} text-center ${
+                  className={`${styles.title} text-center text-white font-semibold ${
                     slider.rightText ? "sm:text-right" : "sm:text-left"
                   }`}
                 >
                   {slider.titleUp} <br />
                   {slider.titleDown}
                 </span>
-                <TextButton value={t("shop_now")} />
+                {/* <TextButton value={t("shop_now")} /> */}
+                <TextButton value='Shop Now' />
               </div>
             </SwiperSlide>
           ))}

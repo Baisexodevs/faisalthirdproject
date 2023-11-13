@@ -77,7 +77,8 @@ const Card: FC<Props> = ({ item }) => {
           onClick={() => addOne!(item)}
           className={styles.addBtn}
         >
-          {t("add_to_cart")}
+          {/* {t("add_to_cart")} */}
+          add to cart
         </button>
       </div>
 
@@ -91,7 +92,8 @@ const Card: FC<Props> = ({ item }) => {
           onClick={() => addOne!(item)}
           className="uppercase font-bold text-sm sm:hidden"
         >
-          {t("add_to_cart")}
+          {/* {t("add_to_cart")} */}
+          add to cart
         </button>
       </div>
     </div>
