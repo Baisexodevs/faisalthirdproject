@@ -1,6 +1,8 @@
-const withPWA = require('next-pwa')({
-  dest: 'public'
-})
+const withPWA = require("next-pwa")({
+  dest: "public",
+});
+
+const prod = process.env.NODE_ENV === "production";
 
 const nextConfig = {
   // module.exports = {
@@ -15,6 +17,10 @@ const nextConfig = {
   },
   images: {
     domains: ["robohash.org", "res.cloudinary.com"],
+  },
+  pwa: {
+    dest: "public",
+    disable: prod ? false : true,
   },
   // pwa: {
   //   dest: "public",

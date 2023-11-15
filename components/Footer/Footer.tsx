@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useTranslations } from "next-intl";
+// import { useTranslations } from "next-intl";
 
 import FacebookLogo from "../../public/icons/FacebookLogo";
 import InstagramLogo from "../../public/icons/InstagramLogo";
@@ -8,7 +8,7 @@ import Input from "../Input/Input";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
-  const t = useTranslations("Navigation");
+  // const t = useTranslations("Navigation");
 
   return (
     <>
@@ -34,7 +34,7 @@ export default function Footer() {
             </div>
           </div>
           <div>
-            <h3 className={styles.footerHead}>{t("store")}</h3>
+            <h3 className={styles.footerHead}>Store</h3>
             <div className={styles.column}>
               <Link href={`/product-category/outdoor`}>
                 <a>outdoor plants</a>
@@ -48,7 +48,7 @@ export default function Footer() {
             </div>
           </div>
           <div>
-            <h3 className={styles.footerHead}>{t("keep_in_touch")}</h3>
+            <h3 className={styles.footerHead}>keep in touch</h3>
             <div className={styles.column}>
               <span>
                 Address

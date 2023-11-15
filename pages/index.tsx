@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { GetStaticProps } from "next";
+// import { GetStaticProps } from "next";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
-import axios from "axios";
+// import { useTranslations } from "next-intl";
+// import axios from "axios";
 
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
@@ -23,7 +23,7 @@ type Props = {
 
 // const Home: React.FC<Props> = ({ products }) => {
 const Home: React.FC<Props> = () => {
-  const t = useTranslations("Index");
+  // const t = useTranslations("Index");
   const [currentItems, setCurrentItems] = useState([]);
   const [isFetching, setIsFetching] = useState(false);
 

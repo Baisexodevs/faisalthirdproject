@@ -1,4 +1,4 @@
-import { useTranslations } from "next-intl";
+// import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 import TextButton from "../Buttons/TextButton";
@@ -47,7 +47,7 @@ const sliders = [
 ];
 
 const Slideshow = () => {
-  const t = useTranslations("Index");
+  // const t = useTranslations("Index");
 
   return (
     <>
