@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+// import { useTranslations } from "next-intl";
 
 import Heart from "../../public/icons/Heart";
 import styles from "./Card.module.css";
@@ -15,7 +15,7 @@ type Props = {
 };
 
 const Card: FC<Props> = ({ item }) => {
-  const t = useTranslations("CartWishlist");
+  // const t = useTranslations("CartWishlist");
   const { wishlist, addToWishlist, deleteWishlistItem } = useWishlist();
   const { addOne } = useCart();
   const [isHovered, setIsHovered] = useState(false);

@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+// import { useTranslations } from "next-intl";
 
 import TopNav from "./TopNav";
 import WhistlistIcon from "../../public/icons/WhistlistIcon";
@@ -20,7 +20,7 @@ type Props = {
 };
 
 const Header: React.FC<Props> = ({ title }) => {
-  const t = useTranslations("Navigation");
+  // const t = useTranslations("Navigation");
   const { wishlist } = useWishlist();
   const [animate, setAnimate] = useState("");
   const [scrolled, setScrolled] = useState<boolean>(false);
@@ -71,7 +71,7 @@ const Header: React.FC<Props> = ({ title }) => {
         href="#main-content"
         className="whitespace-nowrap absolute z-50 left-4 opacity-90 rounded-md bg-white px-4 py-3 transform -translate-y-40 focus:translate-y-0 transition-all duration-300"
       >
-        {t("skip_to_main_content")}
+        skip to main content
       </a>
 
       {/* ===== Top Navigation ===== */}
