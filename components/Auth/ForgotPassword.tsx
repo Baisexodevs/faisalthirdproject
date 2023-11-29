@@ -40,12 +40,12 @@ const ForgotPassword: React.FC<Props> = ({
         as="h3"
         className="text-3xl text-center my-8 font-medium leading-10 text-gray-900"
       >
-        {t("forgot_password")}
+        forgot_password
       </Dialog.Title>
       <form onSubmit={handleSubmit} className="mt-2">
         <Input
           type="email"
-          placeholder={`${t("email_address")} *`}
+          placeholder={`${"email_address"} *`}
           name="email"
           required
           extraClass="w-full focus:border-gray500"
