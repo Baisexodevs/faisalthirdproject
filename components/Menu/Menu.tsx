@@ -3,7 +3,7 @@ import { Menu as HMenu } from "@headlessui/react";
 import Link from "next/link";
 import Image from "next/image";
 import { Dialog, Transition } from "@headlessui/react";
-import { useTranslations } from "next-intl";
+// import { useTranslations } from "next-intl";
 import { useRouter } from "next/router";
 
 import MenuIcon from "../../public/icons/MenuIcon";
@@ -18,7 +18,7 @@ import { useWishlist } from "../../context/wishlist/WishlistProvider";
 import { useAuth } from "../../context/AuthContext";
 
 export default function Menu() {
-  const t = useTranslations("Navigation");
+  // const t = useTranslations("Navigation");
   const router = useRouter();
   const { asPath, locale } = router;
   const { wishlist } = useWishlist();
@@ -115,7 +115,8 @@ export default function Menu() {
                       <SearchIcon extraClass="text-gray300 w-6 h-6" />
                       <input
                         type="search"
-                        placeholder={t("search_anything")}
+                        // placeholder={t("search_anything")}
+                        placeholder="Search anything..."
                         className="px-4 py-2 w-full focus:outline-none text-xl"
                         onChange={handleChange}
                       />
@@ -125,7 +126,8 @@ export default function Menu() {
                         className="w-full text-xl hover:bg-gray100 text-left py-2"
                         onClick={closeModal}
                       >
-                        {t("men")}
+                        {/* {t("men")} */}
+                        men
                       </a>
                     </Link>
                     <Link href="/product-category/women">
@@ -133,7 +135,8 @@ export default function Menu() {
                         className="w-full text-xl hover:bg-gray100 text-left py-2"
                         onClick={closeModal}
                       >
-                        {t("women")}
+                        {/* {t("women")} */}
+                        women
                       </a>
                     </Link>
                     <Link href="/product-category/bags">
@@ -141,7 +144,7 @@ export default function Menu() {
                         className="w-full text-xl hover:bg-gray100 text-left py-2"
                         onClick={closeModal}
                       >
-                        {t("bags")}
+                        {/* {t("bags")} */}
                       </a>
                     </Link>
                     <Link href="/blogs">
@@ -149,7 +152,8 @@ export default function Menu() {
                         className="w-full text-xl hover:bg-gray100 text-left py-2"
                         onClick={closeModal}
                       >
-                        {t("blogs")}
+                        {/* {t("blogs")} */}
+                        blogs
                       </a>
                     </Link>
                     <Link href="/about">
@@ -157,7 +161,8 @@ export default function Menu() {
                         className="w-full text-xl hover:bg-gray100 text-left py-2"
                         onClick={closeModal}
                       >
-                        {t("about_us")}
+                        {/* {t("about_us")} */}
+                        about us
                       </a>
                     </Link>
                     <Link href="/contact">
@@ -165,20 +170,21 @@ export default function Menu() {
                         className="w-full text-xl hover:bg-gray100 text-left py-2"
                         onClick={closeModal}
                       >
-                        {t("contact_us")}
+                        {/* {t("contact_us")} */}
+                        contact us
                       </a>
                     </Link>
                     <hr className="border border-gray300 w-full mt-2" />
                     <div className="w-full text-xl py-2 my-3 flex justify-between">
                       <AuthForm extraClass="flex justify-between w-full">
-                        <span>{auth.user ? t("profile") : t("login")}</span>
+                        <span>{auth.user ? "profile" : "login"}</span>
                         <UserIcon />
                       </AuthForm>
                     </div>
                     <hr className="border border-gray300 w-full" />
                     <Link href="/wishlist">
                       <a className="text-xl py-2 my-3 w-full flex justify-between">
-                        <span>{t("wishlist")}</span>
+                        <span>wishlist</span>
                         <div className="relative">
                           <WhistlistIcon />
                           {noOfWishlist > 0 && (
@@ -203,7 +209,8 @@ export default function Menu() {
                         href="#"
                         className="flex justify-center items-center py-2 px-4 text-center"
                       >
-                        {locale === "en" ? t("english") : t("myanmar")}{" "}
+                        {/* {locale === "en" ? t("english") : t("myanmar")}{" "} */}
+                        {locale === "en" ? "english" : "myanmar"}
                         <DownArrow />
                       </HMenu.Button>
                       <HMenu.Items
@@ -219,7 +226,8 @@ export default function Menu() {
                                   : "bg-white text-gray500"
                               } py-2 px-4 text-center focus:outline-none`}
                             >
-                              {t("english")}
+                              {/* {t("english")} */}
+                              english
                             </a>
                           </Link>
                         </HMenu.Item>
@@ -232,7 +240,8 @@ export default function Menu() {
                                   : "bg-white text-gray500"
                               } py-2 px-4 text-center focus:outline-none`}
                             >
-                              {t("myanmar")}
+                              {/* {t("myanmar")} */}
+                              mynanmar
                             </a>
                           </Link>
                         </HMenu.Item>
@@ -246,7 +255,7 @@ export default function Menu() {
                         href="#"
                         className="flex justify-center items-center py-2 px-4 text-center"
                       >
-                        {t("usd")} <DownArrow />
+                        {"usd"} <DownArrow />
                       </HMenu.Button>
                       <HMenu.Items
                         className="flex flex-col w-full right-0 absolute p-1 border border-gray200 bg-white mt-2 outline-none"
@@ -262,7 +271,7 @@ export default function Menu() {
                                   : "bg-white text-gray500"
                               } py-2 px-4 text-center focus:outline-none`}
                             >
-                              {t("usd")}
+                              {"usd"}
                             </a>
                           )}
                         </HMenu.Item>
@@ -276,7 +285,7 @@ export default function Menu() {
                                   : "bg-white text-gray500"
                               } py-2 px-4 text-center focus:outline-none`}
                             >
-                              {t("mmk")}
+                              {"mmk"}
                             </a>
                           )}
                         </HMenu.Item>

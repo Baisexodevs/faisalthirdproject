@@ -1,5 +1,5 @@
 import { Menu } from "@headlessui/react";
-import { useTranslations } from "next-intl";
+// import { useTranslations } from "next-intl";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
@@ -38,7 +38,7 @@ const MyLink: React.FC<LinkProps> = ({
 const TopNav = () => {
   const router = useRouter();
   const { asPath, locale } = router;
-  const t = useTranslations("Navigation");
+  // const t = useTranslations("Navigation");
 
   return (
     <div className="bg-gray500 text-gray100 hidden lg:block">

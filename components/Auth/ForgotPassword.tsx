@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Dialog } from "@headlessui/react";
-import { useTranslations } from "next-intl";
+// import { useTranslations } from "next-intl";
 
 import { useAuth } from "../../context/AuthContext";
 import Button from "../Buttons/Button";
@@ -21,7 +21,7 @@ const ForgotPassword: React.FC<Props> = ({
 }) => {
   const auth = useAuth();
   const [email, setEmail] = useState("");
-  const t = useTranslations("LoginRegister");
+  // const t = useTranslations("LoginRegister");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -55,22 +55,22 @@ const ForgotPassword: React.FC<Props> = ({
         />
         {errorMsg !== "" && (
           <div className="text-red text-sm mb-4 whitespace-nowrap">
-            {t(errorMsg)}
+            {errorMsg}
           </div>
         )}
         <Button
           type="submit"
-          value={t("submit")}
+          value={"submit"}
           extraClass="w-full text-center text-xl mb-4"
           size="lg"
         />
         <div className="text-center text-gray400">
-          {t("go_back_to")}{" "}
+          {"go_back_to"}{" "}
           <span
             onClick={onLogin}
             className="text-gray500 focus:outline-none focus:underline cursor-pointer"
           >
-            {t("login")}
+            {"login"}
           </span>
         </div>
       </form>

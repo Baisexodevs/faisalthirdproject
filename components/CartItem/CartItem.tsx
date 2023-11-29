@@ -1,6 +1,6 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useCallback, useEffect, useState } from "react";
-import { useTranslations } from "next-intl";
+// import { useTranslations } from "next-intl";
 
 import BagIcon from "../../public/icons/BagIcon";
 import Button from "../Buttons/Button";
@@ -12,7 +12,7 @@ import { useRouter } from "next/router";
 
 export default function CartItem() {
   const router = useRouter();
-  const t = useTranslations("CartWishlist");
+  // const t = useTranslations("CartWishlist");
   const [open, setOpen] = useState(false);
   const [animate, setAnimate] = useState("");
   const { cart, addOne, removeItem, deleteItem } = useCart();
@@ -106,7 +106,7 @@ export default function CartItem() {
               >
                 <div className="bg-lightgreen flex justify-between items-center p-6">
                   <h3 className="text-xl">
-                    {t("cart")} ({noOfItems})
+                    {"cart"} ({noOfItems})
                   </h3>
                   <button
                     type="button"
@@ -137,7 +137,7 @@ export default function CartItem() {
                   </div>
                   <div className="btnContainer mt-4 px-4 h-1/3 mb-20 w-full flex flex-col ">
                     <div className="flex justify-between">
-                      <span>{t("subtotal")}</span>
+                      <span>{"subtotal"}</span>
                       <span>$ {roundDecimal(subtotal)}</span>
                     </div>
                     <LinkButton
@@ -146,10 +146,10 @@ export default function CartItem() {
                       noBorder={false}
                       inverted={false}
                     >
-                      {t("view_cart")}
+                      {"view_cart"}
                     </LinkButton>
                     <Button
-                      value={t("checkout")}
+                      value={"checkout"}
                       onClick={() => router.push(`/checkout`)}
                       disabled={cart.length < 1 ? true : false}
                       extraClass="text-center"

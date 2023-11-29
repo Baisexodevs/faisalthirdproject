@@ -1,6 +1,6 @@
 import { Fragment, useState, FC } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { useTranslations } from "next-intl";
+// import { useTranslations } from "next-intl";
 
 import { useAuth } from "../../context/AuthContext";
 import Button from "../Buttons/Button";
@@ -21,7 +21,7 @@ const LoginForm: FC<Props> = ({ extraClass, children }) => {
   const [open, setOpen] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
-  const t = useTranslations("LoginRegister");
+  // const t = useTranslations("LoginRegister");
 
   let modalBox: JSX.Element;
   if (auth.user) {
@@ -172,7 +172,7 @@ const SuccessModal = ({
   successMsg: string;
   setSuccessMsg: React.Dispatch<React.SetStateAction<string>>;
 }) => {
-  const t = useTranslations("LoginRegister");
+  // const t = useTranslations("LoginRegister");
   const auth = useAuth();
 
   const handleLogout = () => {
@@ -191,16 +191,16 @@ const SuccessModal = ({
       </Dialog.Title>
       <div className="mb-12">
         <div>
-          {t("name")} - {auth.user?.fullname}
+          {"name"} - {auth.user?.fullname}
         </div>
         <div>
-          {t("email_address")} - {auth.user?.email}
+          {"email_address"} - {auth.user?.email}
         </div>
         <div>
-          {t("phone")} - {auth.user?.phone && auth.user?.phone}
+          {"phone"} - {auth.user?.phone && auth.user?.phone}
         </div>
         <div>
-          {t("shipping_address")} -{" "}
+          {"shipping_address"} -{" "}
           {auth.user?.shippingAddress && auth.user?.shippingAddress}
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { useTranslations } from "next-intl";
+// import { useTranslations } from "next-intl";
 
 import SearchIcon from "../../public/icons/SearchIcon";
 import axios from "axios";
@@ -12,7 +12,7 @@ import GhostButton from "../Buttons/GhostButton";
 import { useRouter } from "next/router";
 
 export default function SearchForm() {
-  const t = useTranslations("Navigation");
+  // const t = useTranslations("Navigation");
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [searchValue, setSearchValue] = useState("");
@@ -139,7 +139,7 @@ export default function SearchForm() {
                       )}
                       <input
                         type="search"
-                        placeholder={t("search_anything")}
+                        placeholder={"search_anything"}
                         className="px-4 py-2 w-full focus:outline-none text-2xl"
                         onChange={handleChange}
                       />
@@ -148,7 +148,7 @@ export default function SearchForm() {
                   </div>
                   {noResult ? (
                     <div className="flex justify-center mt-8">
-                      <span>{t("no_result")}</span>
+                      <span>{"no_result"}</span>
                     </div>
                   ) : (
                     <div className="text-center">
@@ -169,7 +169,7 @@ export default function SearchForm() {
                             router.push(`/search?q=${searchValue}`)
                           }
                         >
-                          {t("view_all")}
+                          {"view_all"}
                         </GhostButton>
                       )}
                     </div>

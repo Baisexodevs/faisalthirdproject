@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Dialog } from "@headlessui/react";
-import { useTranslations } from "next-intl";
+// import { useTranslations } from "next-intl";
 
 import { useAuth } from "../../context/AuthContext";
 import Button from "../Buttons/Button";
@@ -24,7 +24,7 @@ const Login: React.FC<Props> = ({
   const auth = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const t = useTranslations("LoginRegister");
+  // const t = useTranslations("LoginRegister");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -42,12 +42,12 @@ const Login: React.FC<Props> = ({
         as="h3"
         className="text-4xl text-center my-8 font-medium leading-6 text-gray-900"
       >
-        {t("login")}
+        {"login"}
       </Dialog.Title>
       <form onSubmit={handleSubmit} className="mt-2">
         <Input
           type="email"
-          placeholder={`${t("email_address")} *`}
+          placeholder={`${"email_address"} *`}
           name="email"
           required
           extraClass="w-full focus:border-gray500"
@@ -57,7 +57,7 @@ const Login: React.FC<Props> = ({
         />
         <Input
           type="password"
-          placeholder={`${t("password")} *`}
+          placeholder={`${"password"} *`}
           name="password"
           required
           extraClass="w-full focus:border-gray500 mb-4"
@@ -79,14 +79,14 @@ const Login: React.FC<Props> = ({
               className="w-4 h-4 mb-0 mr-2"
             />
             <label htmlFor="remember" className="text-sm">
-              {t("remember_me")}
+              {"remember_me"}
             </label>
           </div>
           <span
             onClick={onForgotPassword}
             className="text-gray400 text-sm hover:text-gray500 focus:outline-none focus:text-gray500"
           >
-            {t("forgot_password")}
+            {"forgot_password"}
           </span>
         </div>
         <Button
@@ -96,12 +96,12 @@ const Login: React.FC<Props> = ({
           size="lg"
         />
         <div className="text-center text-gray400">
-          {t("not_member")}{" "}
+          {"not_member"}{" "}
           <span
             onClick={onRegister}
             className="text-gray500 focus:outline-none focus:underline cursor-pointer"
           >
-            {t("register")}
+            {"register"}
           </span>
         </div>
       </form>
