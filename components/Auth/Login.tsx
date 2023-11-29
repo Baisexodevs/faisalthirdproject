@@ -67,7 +67,7 @@ const Login: React.FC<Props> = ({
         />
         {errorMsg !== "" && (
           <div className="text-red text-sm mb-4 whitespace-nowrap">
-            {t(errorMsg)}
+            {errorMsg}
           </div>
         )}
         <div className="flex justify-between mb-4">
@@ -91,7 +91,7 @@ const Login: React.FC<Props> = ({
         </div>
         <Button
           type="submit"
-          value={t("login")}
+          value={"login"}
           extraClass="w-full text-center text-xl mb-4"
           size="lg"
         />

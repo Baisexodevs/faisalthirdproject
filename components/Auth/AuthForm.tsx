@@ -187,7 +187,7 @@ const SuccessModal = ({
       >
         {/* {t("login_successful")} */}
         {/* {t("register_successful")} */}
-        {successMsg !== "" ? t(successMsg) : t("profile")}
+        {successMsg !== "" ? successMsg : "profile"}
       </Dialog.Title>
       <div className="mb-12">
         <div>
@@ -205,7 +205,7 @@ const SuccessModal = ({
         </div>
       </div>
       <div className="flex justify-center items-center">
-        <Button value={t("logout")} onClick={handleLogout} />
+        <Button value={"logout"} onClick={handleLogout} />
       </div>
     </>
   );
