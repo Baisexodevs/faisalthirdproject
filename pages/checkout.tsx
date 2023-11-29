@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useTranslations } from "next-intl";
+// import { useTranslations } from "next-intl";
 import axios from "axios";
 import Image from "next/image";
 import { GetStaticProps } from "next";
@@ -33,7 +33,7 @@ type Order = {
 };
 
 const ShoppingCart = () => {
-  const t = useTranslations("CartWishlist");
+  // const t = useTranslations("CartWishlist");
   const { cart, clearCart } = useCart();
   const auth = useAuth();
   const [deli, setDeli] = useState<DeliveryType>("STORE_PICKUP");
@@ -168,7 +168,7 @@ const ShoppingCart = () => {
         {/* ===== Heading & Continue Shopping */}
         <div className="app-max-width px-4 sm:px-8 md:px-20 w-full border-t-2 border-gray100">
           <h1 className="text-2xl sm:text-4xl text-center sm:text-left mt-6 mb-2 animatee__animated animate__bounce">
-            {t("checkout")}
+            {"checkout"}
           </h1>
         </div>
 
@@ -178,12 +178,12 @@ const ShoppingCart = () => {
             <div className="h-full w-full lg:w-7/12 mr-8">
               {errorMsg !== "" && (
                 <span className="text-red text-sm font-semibold">
-                  - {t(errorMsg)}
+                  - {errorMsg}
                 </span>
               )}
               <div className="my-4">
                 <label htmlFor="name" className="text-lg">
-                  {t("name")}
+                  {"name"}
                 </label>
                 <Input
                   name="name"
@@ -200,7 +200,7 @@ const ShoppingCart = () => {
 
               <div className="my-4">
                 <label htmlFor="email" className="text-lg mb-1">
-                  {t("email_address")}
+                  {"email_address"}
                 </label>
                 <Input
                   name="email"
@@ -221,7 +221,7 @@ const ShoppingCart = () => {
               {!auth.user && (
                 <div className="my-4">
                   <label htmlFor="password" className="text-lg">
-                    {t("password")}
+                    {"password"}
                   </label>
                   <Input
                     name="password"
@@ -239,7 +239,7 @@ const ShoppingCart = () => {
 
               <div className="my-4">
                 <label htmlFor="phone" className="text-lg">
-                  {t("phone")}
+                  {"phone"}
                 </label>
                 <Input
                   name="phone"
@@ -256,7 +256,7 @@ const ShoppingCart = () => {
 
               <div className="my-4">
                 <label htmlFor="address" className="text-lg">
-                  {t("address")}
+                  {"address"}
                 </label>
                 <textarea
                   aria-label="Address"
@@ -284,13 +284,13 @@ const ShoppingCart = () => {
                 ></label>
               </div>
               <label htmlFor="toggle" className="text-xs text-gray-700">
-                {t("different_shipping_address")}
+                {"different_shipping_address"}
               </label>
 
               {diffAddr && (
                 <div className="my-4">
                   <label htmlFor="shipping_address" className="text-lg">
-                    {t("shipping_address")}
+                    {"shipping_address"}
                   </label>
                   <textarea
                     id="shipping_address"
@@ -309,7 +309,7 @@ const ShoppingCart = () => {
 
               {!auth.user && (
                 <div className="text-sm text-gray400 mt-8 leading-6">
-                  {t("form_note")}
+                  {"form_note"}
                 </div>
               )}
             </div>
@@ -318,10 +318,10 @@ const ShoppingCart = () => {
               <div className="border border-gray500 p-6 divide-y-2 divide-gray200">
                 <div className="flex justify-between">
                   <span className="text-base uppercase mb-3">
-                    {t("product")}
+                    {"product"}
                   </span>
                   <span className="text-base uppercase mb-3">
-                    {t("subtotal")}
+                    {"subtotal"}
                   </span>
                 </div>
 
@@ -340,12 +340,12 @@ const ShoppingCart = () => {
                 </div>
 
                 <div className="py-3 flex justify-between">
-                  <span className="uppercase">{t("subtotal")}</span>
+                  <span className="uppercase">{"subtotal"}</span>
                   <span>$ {subtotal}</span>
                 </div>
 
                 <div className="py-3">
-                  <span className="uppercase">{t("delivery")}</span>
+                  <span className="uppercase">{"delivery"}</span>
                   <div className="mt-3 space-y-2">
                     <div className="flex justify-between">
                       <div>
@@ -358,7 +358,7 @@ const ShoppingCart = () => {
                           onChange={() => setDeli("STORE_PICKUP")}
                         />{" "}
                         <label htmlFor="pickup" className="cursor-pointer">
-                          {t("store_pickup")}
+                          {"store_pickup"}
                         </label>
                       </div>
                       <span>Free</span>
@@ -375,7 +375,7 @@ const ShoppingCart = () => {
                           // defaultChecked
                         />{" "}
                         <label htmlFor="ygn" className="cursor-pointer">
-                          {t("within_yangon")}
+                          {"within_yangon"}
                         </label>
                       </div>
                       <span>$ 2.00</span>
@@ -391,7 +391,7 @@ const ShoppingCart = () => {
                           onChange={() => setDeli("OTHERS")}
                         />{" "}
                         <label htmlFor="others" className="cursor-pointer">
-                          {t("other_cities")}
+                          {"other_cities"}
                         </label>
                       </div>
                       <span>$ 7.00</span>
@@ -401,7 +401,7 @@ const ShoppingCart = () => {
 
                 <div>
                   <div className="flex justify-between py-3">
-                    <span>{t("grand_total")}</span>
+                    <span>{"grand_total"}</span>
                     <span>$ {roundDecimal(+subtotal + deliFee)}</span>
                   </div>
 
@@ -411,7 +411,7 @@ const ShoppingCart = () => {
                       className="relative flex flex-col bg-white p-5 rounded-lg shadow-md border border-gray300 cursor-pointer"
                     >
                       <span className="font-semibold text-gray-500 text-base leading-tight capitalize">
-                        {t("cash_on_delivery")}
+                        {"cash_on_delivery"}
                       </span>
                       <input
                         type="radio"
@@ -450,10 +450,10 @@ const ShoppingCart = () => {
                       className="relative flex flex-col bg-white p-5 rounded-lg shadow-md border border-gray300 cursor-pointer"
                     >
                       <span className="font-semibold text-gray-500 leading-tight capitalize">
-                        {t("bank_transfer")}
+                        {"bank_transfer"}
                       </span>
                       <span className="text-gray400 text-sm mt-1">
-                        {t("bank_transfer_desc")}
+                        {"bank_transfer_desc"}
                       </span>
                       <input
                         type="radio"
@@ -506,13 +506,13 @@ const ShoppingCart = () => {
                       htmlFor="send-email-toggle"
                       className="text-xs text-gray-700"
                     >
-                      {t("send_order_email")}
+                      {"send_order_email"}
                     </label>
                   </div>
                 </div>
 
                 <Button
-                  value={t("place_order")}
+                  value={"place_order"}
                   size="xl"
                   extraClass={`w-full`}
                   onClick={() => setIsOrdering(true)}
@@ -529,14 +529,14 @@ const ShoppingCart = () => {
           </div>
         ) : (
           <div className="app-max-width px-4 sm:px-8 md:px-20 mb-14 mt-6">
-            <div className="text-gray400 text-base">{t("thank_you_note")}</div>
+            <div className="text-gray400 text-base">{"thank_you_note"}</div>
 
             <div className="flex flex-col md:flex-row">
               <div className="h-full w-full md:w-1/2 mt-2 lg:mt-4">
                 <div className="border border-gray500 p-6 divide-y-2 divide-gray200">
                   <div className="flex justify-between">
                     <span className="text-base uppercase mb-3">
-                      {t("order_id")}
+                      {"order_id"}
                     </span>
                     <span className="text-base uppercase mb-3">
                       {completedOrder.orderNumber}
@@ -545,11 +545,11 @@ const ShoppingCart = () => {
 
                   <div className="pt-2">
                     <div className="flex justify-between mb-2">
-                      <span className="text-base">{t("email_address")}</span>
+                      <span className="text-base">{"email_address"}</span>
                       <span className="text-base">{auth.user?.email}</span>
                     </div>
                     <div className="flex justify-between mb-2">
-                      <span className="text-base">{t("order_date")}</span>
+                      <span className="text-base">{"order_date"}</span>
                       <span className="text-base">
                         {new Date(
                           completedOrder.orderDate
@@ -557,7 +557,7 @@ const ShoppingCart = () => {
                       </span>
                     </div>
                     <div className="flex justify-between mb-2">
-                      <span className="text-base">{t("delivery_date")}</span>
+                      <span className="text-base">{"delivery_date"}</span>
                       <span className="text-base">
                         {new Date(
                           completedOrder.deliveryDate
@@ -568,17 +568,17 @@ const ShoppingCart = () => {
 
                   <div className="py-3">
                     <div className="flex justify-between mb-2">
-                      <span className="">{t("payment_method")}</span>
+                      <span className="">{"payment_method"}</span>
                       <span>{completedOrder.paymentType}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="">{t("delivery_method")}</span>
+                      <span className="">{"delivery_method"}</span>
                       <span>{completedOrder.deliveryType}</span>
                     </div>
                   </div>
 
                   <div className="pt-2 flex justify-between mb-2">
-                    <span className="text-base uppercase">{t("total")}</span>
+                    <span className="text-base uppercase">{"total"}</span>
                     <span className="text-base">
                       $ {completedOrder.totalPrice}
                     </span>
@@ -588,21 +588,21 @@ const ShoppingCart = () => {
 
               <div className="h-full w-full md:w-1/2 md:ml-8 mt-4 md:mt-2 lg:mt-4">
                 <div>
-                  {t("your_order_received")}
+                  {"your_order_received"}
                   {completedOrder.paymentType === "BANK_TRANSFER" &&
-                    t("bank_transfer_note")}
+                    "bank_transfer_note"}
                   {completedOrder.paymentType === "CASH_ON_DELIVERY" &&
                     completedOrder.deliveryType !== "STORE_PICKUP" &&
-                    t("cash_delivery_note")}
+                    "cash_delivery_note"}
                   {completedOrder.deliveryType === "STORE_PICKUP" &&
-                    t("store_pickup_note")}
-                  {t("thank_you_for_purchasing")}
+                    "store_pickup_note"}
+                  {"thank_you_for_purchasing"}
                 </div>
 
                 {completedOrder.paymentType === "BANK_TRANSFER" ? (
                   <div className="mt-6">
                     <h2 className="text-xl font-bold">
-                      {t("our_banking_details")}
+                      {"our_banking_details"}
                     </h2>
                     <span className="uppercase block my-1">Sat Naing :</span>
 
