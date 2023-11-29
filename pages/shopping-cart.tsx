@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+// import { useTranslations } from "next-intl";
 
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
@@ -16,7 +16,7 @@ import { useRouter } from "next/router";
 // let w = window.innerWidth;
 
 const ShoppingCart = () => {
-  const t = useTranslations("CartWishlist");
+  // const t = useTranslations("CartWishlist");
   const router = useRouter();
   const [deli, setDeli] = useState("Pickup");
   const { cart, addOne, removeItem, deleteItem, clearCart } = useCart();
@@ -39,13 +39,13 @@ const ShoppingCart = () => {
         {/* ===== Heading & Continue Shopping */}
         <div className="app-max-width px-4 sm:px-8 md:px-20 w-full border-t-2 border-gray100">
           <h1 className="text-2xl sm:text-4xl text-center sm:text-left mt-6 mb-2 animatee__animated animate__bounce">
-            {t("shopping_cart")}
+            {"shopping_cart"}
           </h1>
           <div className="mt-6 mb-3">
             <Link href="/">
               <a className="inline-block">
                 <LeftArrow size="sm" extraClass="inline-block" />{" "}
-                {t("continue_shopping")}
+                {"continue_shopping"}
               </a>
             </Link>
           </div>
@@ -58,17 +58,17 @@ const ShoppingCart = () => {
               <thead>
                 <tr className="border-t-2 border-b-2 border-gray200">
                   <th className="font-normal text-left sm:text-center py-2 xl:w-72">
-                    {t("product_details")}
+                    {"product_details"}
                   </th>
                   <th
                     className={`font-normal py-2 hidden sm:block ${
                       cart.length === 0 ? "text-center" : "text-right"
                     }`}
                   >
-                    {t("unit_price")}
+                    {"unit_price"}
                   </th>
-                  <th className="font-normal py-2">{t("quantity")}</th>
-                  <th className="font-normal py-2 text-right">{t("amount")}</th>
+                  <th className="font-normal py-2">{"quantity"}</th>
+                  <th className="font-normal py-2 text-right">{"amount"}</th>
                   <th
                     className="font-normal py-2 text-right"
                     style={{ minWidth: "3rem" }}
@@ -78,7 +78,7 @@ const ShoppingCart = () => {
               <tbody>
                 {cart.length === 0 ? (
                   <tr className="w-full text-center h-60 border-b-2 border-gray200">
-                    <td colSpan={5}>{t("cart_is_empty")}</td>
+                    <td colSpan={5}>{"cart_is_empty"}</td>
                   </tr>
                 ) : (
                   cart.map((item) => {
@@ -150,20 +150,20 @@ const ShoppingCart = () => {
                 onClick={clearCart}
                 extraClass="hidden sm:inline-block"
               >
-                {t("clear_cart")}
+                {"clear_cart"}
               </GhostButton>
             </div>
           </div>
           <div className="h-full w-full lg:w-4/12 mt-10 lg:mt-0">
             {/* Cart Totals */}
             <div className="border border-gray500 divide-y-2 divide-gray200 p-6">
-              <h2 className="text-xl mb-3">{t("cart_totals")}</h2>
+              <h2 className="text-xl mb-3">{"cart_totals"}</h2>
               <div className="flex justify-between py-2">
-                <span className="uppercase">{t("subtotal")}</span>
+                <span className="uppercase">{"subtotal"}</span>
                 <span>$ {roundDecimal(subtotal)}</span>
               </div>
               <div className="py-3">
-                <span className="uppercase">{t("delivery")}</span>
+                <span className="uppercase">{"delivery"}</span>
                 <div className="mt-3 space-y-2">
                   <div className="flex justify-between">
                     <div>
@@ -176,10 +176,10 @@ const ShoppingCart = () => {
                         onChange={() => setDeli("Pickup")}
                       />{" "}
                       <label htmlFor="pickup" className="cursor-pointer">
-                        {t("store_pickup")}
+                        {"store_pickup"}
                       </label>
                     </div>
-                    <span>{t("free")}</span>
+                    <span>{"free"}</span>
                   </div>
                   <div className="flex justify-between">
                     <div>
@@ -193,7 +193,7 @@ const ShoppingCart = () => {
                         // defaultChecked
                       />{" "}
                       <label htmlFor="ygn" className="cursor-pointer">
-                        {t("within_yangon")}
+                        {"within_yangon"}
                       </label>
                     </div>
                     <span>$ 2.00</span>
@@ -209,7 +209,7 @@ const ShoppingCart = () => {
                         onChange={() => setDeli("Others")}
                       />{" "}
                       <label htmlFor="others" className="cursor-pointer">
-                        {t("other_cities")}
+                        {"other_cities"}
                       </label>
                     </div>
                     <span>$ 7.00</span>
@@ -217,11 +217,11 @@ const ShoppingCart = () => {
                 </div>
               </div>
               <div className="flex justify-between py-3">
-                <span>{t("grand_total")}</span>
+                <span>{"grand_total"}</span>
                 <span>$ {roundDecimal(subtotal + deliFee)}</span>
               </div>
               <Button
-                value={t("proceed_to_checkout")}
+                value={"proceed_to_checkout"}
                 size="xl"
                 extraClass="w-full"
                 onClick={() => router.push(`/checkout`)}
