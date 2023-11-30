@@ -128,13 +128,13 @@ const ProductCategory: React.FC<Props> = ({
         <div className="app-x-padding app-max-width w-full mt-8">
           <h3 className="text-4xl mb-2 capitalize">{category as string}</h3>
           <div className="flex flex-col-reverse sm:flex-row gap-4 sm:gap-0 justify-between mt-4 sm:mt-6">
-            <span>
+            {/* <span>
               {("showing_from_to", {
                 from: firstIndex,
                 to: numberOfProducts < lastIndex ? numberOfProducts : lastIndex,
                 all: numberOfProducts,
               })}
-            </span>
+            </span> */}
             {category !== "new-arrivals" && <SortMenu orderby={orderby} />}
           </div>
         </div>
@@ -222,7 +222,7 @@ const ProductCategory: React.FC<Props> = ({
 // };
 
 const SortMenu: React.FC<{ orderby: OrderType }> = ({ orderby }) => {
-  const t = useTranslations("Navigation");
+  // const t = useTranslations("Navigation");
   const router = useRouter();
   const { category } = router.query;
 
