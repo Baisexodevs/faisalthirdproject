@@ -33,9 +33,10 @@ const ProductCategory: React.FC<Props> = ({
   const { category } = router.query;
   const lastPage = Math.ceil(numberOfProducts / 10);
 
-  const capitalizedCategory =
-    category!.toString().charAt(0).toUpperCase() +
-    category!.toString().slice(1);
+  const capitalizedCategory = category;
+  // const capitalizedCategory =
+  //   category!.toString().charAt(0).toUpperCase() +
+  //   category!.toString().slice(1);
 
   const firstIndex = page === 1 ? page : page * 10 - 9;
   const lastIndex = page * 10;
