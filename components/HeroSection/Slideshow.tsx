@@ -17,31 +17,31 @@ const sliders = [
   {
     id: 2,
     image: "/bg-img/outdoor.jpg",
-    imageTablet: "/bg-img/curly_hair_girl-1-tablet.png",
-    imageMobile: "/bg-img/curly_hair_girl-1_mobile.jpg",
+    imageTablet: "/bg-img/outdoor.jpg",
+    imageMobile: "/bg-img/outdoor.jpg",
     subtitle: "50% off",
     titleUp: "OutDoor Plants",
-    titleDown: "Dresses",
+    titleDown: "Plants",
     rightText: false,
   },
   {
     id: 1,
     image: "/bg-img/indoor.jpg",
-    imageTablet: "/bg-img/curly_hair_white-1-tablet.png",
-    imageMobile: "/bg-img/curly_hair_white-1_mobile.jpg",
+    imageTablet: "/bg-img/indoor.jpg",
+    imageMobile: "/bg-img/indoor.jpg",
     subtitle: "Spring Revolution",
     titleUp: "Indoor Plants",
-    titleDown: "Dresses",
+    titleDown: "Plants",
     rightText: true,
   },
   {
     id: 3,
     image: "/bg-img/artificial.jpg",
-    imageTablet: "/bg-img/monigote-tablet.png",
-    imageMobile: "/bg-img/monigote_mobile.jpg",
+    imageTablet: "/bg-img/artificial.jpg",
+    imageMobile: "/bg-img/artificial.jpg",
     subtitle: "Spring promo",
     titleUp: "Artificial Plants",
-    titleDown: "Promotions",
+    titleDown: "Plants Promotion",
     rightText: false,
   },
 ];
@@ -73,6 +73,7 @@ const Slideshow = () => {
               <div className="hidden lg:block">
                 <Image
                   layout="responsive"
+                  className="object-cover"
                   src={slider.image}
                   width={1144}
                   height={572}
@@ -82,6 +83,7 @@ const Slideshow = () => {
               <div className="hidden sm:block lg:hidden">
                 <Image
                   layout="responsive"
+                  className="object-cover"
                   src={slider.imageTablet}
                   width={820}
                   height={720}
@@ -91,6 +93,7 @@ const Slideshow = () => {
               <div className="sm:hidden">
                 <Image
                   layout="responsive"
+                  className="object-cover"
                   src={slider.imageMobile}
                   width={428}
                   height={800}

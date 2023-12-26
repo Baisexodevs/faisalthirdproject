@@ -104,7 +104,7 @@ const Home: React.FC<Props> = () => {
             <div className="w-full sm:col-span-2 lg:col-span-2">
               <OverlayContainer
                 imgSrc="/bg-img/outdoor-minipage.jpg"
-                imgSrc2="/bg-img/banner_minipage1-tablet.jpg"
+                imgSrc2="/bg-img/indoor-minipage.jpg"
                 imgAlt="New Arrivals"
               >
                 <LinkButton
