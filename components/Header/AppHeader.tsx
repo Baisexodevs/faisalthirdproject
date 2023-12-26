@@ -9,12 +9,12 @@ type Props = {
 
 // "Discover affordable and fashionable men's and women's clothing online at Haru Fashion. Free Returns ✓ 1000+ New Arrivals Dropped Daily."
 const defaultDesc =
-  "Haru Fashion e-commerce developed with Next.JS. Coded with 🖤 by Sat Naing (satnaing.dev).";
+  "DracinaLandscaping e-commerce developed with Next.JS. Coded with 🖤 by Bais Ali Khan ().";
 const defaultKeywords =
-  "Haru Fashion, Online Shop, E-commerce, Sat Naing, NextJS";
+  "DracinaLandscaping, Online Shop, E-commerce, Bais Ali Khan, NextJS";
 
 const AppHeader: React.FC<Props> = ({
-  title = "Haru Fashion",
+  title = "Dracina Landscaping",
   desc = defaultDesc,
   keywords = defaultKeywords,
 }) => {

@@ -624,8 +624,8 @@ const ShoppingCart = () => {
                     <div className="w-3/4">
                       <Image
                         className="justify-center"
-                        src="/logo.svg"
-                        alt="Haru Fashion"
+                        src="/logo.png"
+                        alt="DracinaLandscape"
                         width={220}
                         height={50}
                         layout="responsive"

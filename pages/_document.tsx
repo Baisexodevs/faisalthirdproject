@@ -1,9 +1,9 @@
 import { Html, Head, Main, NextScript } from "next/document";
 
-const title = "Haru Fashion";
+const title = "DracinaLandscape";
 const desc =
-  "Haru Fashion e-commerce developed with Next.JS. Coded with 🖤 by Sat Naing (satnaing.dev).";
-const keywords = "Haru Fashion, Online Shop, E-commerce, Sat Naing, NextJS";
+  "DracinaLandscape e-commerce developed with Next.JS. Coded with 🖤 by Bais Ali Khan ().";
+const keywords = "DracinaLandscape, Online Shop, E-commerce, Bais Ali Khan, NextJS";
 
 export default function Document() {
   return (
